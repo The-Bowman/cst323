@@ -18,8 +18,8 @@ class RegisterController extends Controller
 
             $dao = new SecurityDAO();
             // Binding to the userModel.
-            $user = new User($username, $password, $email);
-           
+            $user = new User($username, $password);
+           $user->email = $email;
             $register = $dao->insertUser($user);
 
             if ($register) {
